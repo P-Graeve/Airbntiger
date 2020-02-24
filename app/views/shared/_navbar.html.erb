@@ -1,7 +1,9 @@
     <header>
       <nav class="navbar-base navbar-collapse">
         <div>
-          <%= image_tag "tiger.svg", alt: "Tiger Illustration", height: 45 %>
+          <%= link_to root_path do %>
+            <%= image_tag "tiger.svg", alt: "Tiger Illustration", height: 45 %>
+          <% end %>
         <input  class="nav-btn nav-search" type="text" placeholder="Search..">
         </div>
         <div>
