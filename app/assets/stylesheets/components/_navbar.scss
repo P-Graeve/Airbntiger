@@ -1,12 +1,16 @@
-.navbar-lewagon {
+.navbar-base {
+  display: flex;
+  padding: 10px;
   justify-content: space-between;
-  background: white;
+  width: 100%;
+  height: 50px;
+  background: #f5a442;
+  box-shadow: 0px 4px 5px -4px rgba(0,0,0,0.75);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-base .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+/* ICON CONTRIBUTOR TO PLACE ON OUR WEBSITE
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
