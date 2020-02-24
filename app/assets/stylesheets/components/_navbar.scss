@@ -1,12 +1,32 @@
-.navbar-lewagon {
+.navbar-base {
+  display: flex;
+  padding: 10px;
   justify-content: space-between;
-  background: white;
+  width: 100%;
+  height: 50px;
+  background: #f5a442;
+  box-shadow: 0px 4px 5px -4px rgba(0,0,0,0.75);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-base .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-btn {
+  margin: 10px;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #1c1c1c;
+  }
 }
+
+.nav-search {
+  padding: 7px;
+  border: solid 1px #525252;
+  border-radius: 25px;
+}
+/* ICON CONTRIBUTOR TO PLACE ON OUR WEBSITE
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
