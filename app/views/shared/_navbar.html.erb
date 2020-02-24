@@ -5,8 +5,12 @@
         <input  class="nav-btn nav-search" type="text" placeholder="Search..">
         </div>
         <div>
-        <a  class="nav-btn nav-hover" href="#">Sign up Button</a>
-        <a  class="nav-btn nav-hover" href="#">Log in Button</a>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, class: 'nav-btn nav-hover' %>
+            <%= link_to "Log in", new_user_session_path, class: 'nav-btn nav-hover' %>
+          <% end %>
         </div>
       </nav>
     </header>
