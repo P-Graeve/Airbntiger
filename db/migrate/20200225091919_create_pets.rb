@@ -4,7 +4,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :name
       t.float :price_in_eur
       t.text :description
-      t.string :type
+      t.string :pet_type
       t.string :breed
 
       t.timestamps
