@@ -10,14 +10,17 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new(pet_param)
-    @pet.save
-    redirect_to pets_path
+    @pet = Pet.new(pet_params)
+    if @pet.save
+      redirect_to pets_path
+    else
+      render :new
+    end
   end
 
   private
 
-  def pet_param
+  def pet_params
     params.require(:pet).permit(:name, :price_in_eur, :description, :pet_type)
   end
 end
