@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
+  has_many :bookings
   # constant TYPES has array of all allowed types of pets
   PET_TYPES = %w(dog hamster cat tiger lion rhino fish turtle iguana rat parrot)
 
