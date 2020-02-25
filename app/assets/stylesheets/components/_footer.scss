@@ -1,4 +1,5 @@
 footer {
+  position: relative;
   background-color: #393e46;
   width: 100%;
   display: flex;
@@ -18,4 +19,11 @@ footer {
   a:hover {
     color: #f39422;
   }
+}
+
+.reference-flat-icons {
+  position: absolute;
+  font-size: 0.5em;
+  right: 0;
+  bottom: 2px;
 }
