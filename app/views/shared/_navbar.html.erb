@@ -1,18 +1,21 @@
-    <header>
-      <nav class="navbar-base navbar-collapse">
-        <div>
-          <%= link_to root_path do %>
-            <%= image_tag "tiger.svg", alt: "Tiger Illustration", height: 45 %>
-          <% end %>
-        <input  class="nav-btn nav-search" type="text" placeholder="Search..">
-        </div>
-        <div>
-          <% if user_signed_in? %>
-            <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path, class: 'nav-btn nav-hover' %>
-            <%= link_to "Log in", new_user_session_path, class: 'nav-btn nav-hover' %>
-          <% end %>
-        </div>
-      </nav>
-    </header>
+<header>
+  <nav class="navbar-base navbar-collapse">
+    <div class="d-flex align-items-center">
+      <%= link_to root_path do %>
+        <%= image_tag "tiger.svg", alt: "Tiger Illustration", height: 45 %>
+      <% end %>
+      <form action="/pets">
+        <input class="nav-btn nav-search" type="text" name="query" placeholder="Search..">
+      </form>
+    </div>
+    <div>
+      <% if user_signed_in? %>
+        <span class="mr-3">Welcome <%= current_user.username %></span>
+        <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'nav-btn nav-hover' %>
+        <%= link_to "Log in", new_user_session_path, class: 'nav-btn nav-hover' %>
+      <% end %>
+    </div>
+  </nav>
+</header>
