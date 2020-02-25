@@ -3,8 +3,8 @@ class PetsController < ApplicationController
 
   def index
     # check if params are present
-    if params.present?
-      @pets = Pets.where("name ILIKE ?", params[:query])
+    if params[:query].present?
+      @pets = Pet.where("name ILIKE ?", params[:query])
     else
       @pets = Pet.all
     end
