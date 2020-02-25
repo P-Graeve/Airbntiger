@@ -1,20 +1,20 @@
 
 <div class="container">
   <div class="row">
-        <div class=" col-6 offset-3 mb-5">
+        <div class=" col-6 offset-3 mb-5 mt-5">
 <div class="ui-card">
 
-<h1>Add a new pet?</h1>
+<h1>Add a new pet!</h1>
 <%= simple_form_for (@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :price_in_eur %>
-  <%= f.input :pet_type %>
+  <%= f.input :pet_type, collection: Pet::PET_TYPES %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
       <% end %>
 
-<p>Disclaimer: You'll hurt your little buddy's heart just so you can earn profit off of it? What kind of human are you?</p>
+<p class="form-small-p">Disclaimer: You'll hurt your little buddy's heart just so you can earn profit off of it? What kind of human are you?</p>
 
 </div>
 </div>
