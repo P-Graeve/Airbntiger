@@ -1,11 +1,30 @@
-.landing {
+.landing-banner {
   margin: 0;
   height: 85vh;
   background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.2) 100%), url(https://images.unsplash.com/photo-1496806195556-91bdded94209?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80);
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
-.landing h1 {
+.banner-landing-card {
+  position: absolute;
+  text-align: left;
+  top: 20%;
+  left: 60px;
+  width: 300px;
+}
 
+.landing-banner h1 {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+
+.landing-banner form {
+  padding: 0 20px;
+}
+
+.landing-banner input {
+  margin-bottom: 15px;
 }
