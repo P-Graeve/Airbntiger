@@ -13,3 +13,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+// main tag should have min-height of 100vh minus the footer
+main {
+  min-height: 100vh;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+// semantic classes
+.margin-top-header-height {
+  margin-top: $nav-height;
+}

@@ -1,15 +1,15 @@
 <!-- <h1 class="landing">Wanna rent a Tiger? <br> We make it possible</h1> -->
-<div class="landing-banner">
-      <div class="ui-card banner-landing-card">
-        <h1>Feeling sad? Rent a buddy</h1>
-        <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:query, "Search for:") %>
-        <%= text_field_tag(:query) %>
-        <%= label_tag(:start_date, "Start-Date:") %>
-        <%= date_field(:search, :start_date) %>
-        <%= label_tag(:end_date, "End-Date:") %>
-        <%= date_field(:search, :end_date) %>
-        <%= submit_tag("Search") %>
-        <% end %>
-      </div>
-</div>
+<main class="landing-banner">
+  <div class="ui-card banner-landing-card">
+    <h1>Feeling sad? Rent a buddy</h1>
+      <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:query, "Search for:") %>
+      <%= text_field_tag(:query) %>
+      <%= label_tag(:start_date, "Start-Date:") %>
+      <%= date_field(:search, :start_date) %>
+      <%= label_tag(:end_date, "End-Date:") %>
+      <%= date_field(:search, :end_date) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</main>
