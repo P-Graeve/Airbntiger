@@ -11,17 +11,14 @@ footer {
  p {
     color: white;
   }
-}
-
-li {
-  list-style-type: none;
-  color: white;
-
+  li {
+    list-style: none;
+    color: white;
+  }
   a {
   color: white;
   }
-}
-
-a:hover {
-  color: #f39422;
+  a:hover {
+    color: #f39422;
+  }
 }
