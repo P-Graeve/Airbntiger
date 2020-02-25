@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_091919) do
     t.string "name"
     t.float "price_in_eur"
     t.text "description"
-    t.string "type"
+    t.string "pet_type"
     t.string "breed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
