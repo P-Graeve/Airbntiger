@@ -8,6 +8,7 @@
     </div>
     <div>
       <% if user_signed_in? %>
+        <span class="mr-3">Welcome <%= current_user.username %></span>
         <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: 'nav-btn nav-hover' %>
