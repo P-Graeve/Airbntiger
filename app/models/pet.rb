@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
+  belongs_to :user
   has_many :bookings
   has_many_attached :photo
   # constant TYPES has array of all allowed types of pets
