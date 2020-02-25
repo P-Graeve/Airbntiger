@@ -4,8 +4,10 @@
       <%= link_to root_path do %>
         <%= image_tag "tiger.svg", alt: "Tiger Illustration", height: 45 %>
       <% end %>
-    <input  class="nav-btn nav-search" type="text" placeholder="Search..">
     </div>
+    <form action="/">
+      <input  class="nav-btn nav-search" type="text" name="query" placeholder="Search..">
+    </form>
     <div>
       <% if user_signed_in? %>
         <span class="mr-3">Welcome <%= current_user.username %></span>
