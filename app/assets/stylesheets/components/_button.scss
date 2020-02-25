@@ -8,3 +8,40 @@
     color: #1c1c1c;
   }
 }
+
+.form-actions-btn{
+  background-color: #d4d7dd;
+  border-radius: 10px;
+  width: 80px;
+  margin-bottom: 10px;
+
+  &:hover{
+    color: #f39422;
+  }
+}
+
+
+
+.login-form-btn{
+  background-color: #d4d7dd;
+  border-radius: 10px;
+  width: 100px;
+  margin: 10px 0 20px 0;
+  color: black;
+
+  &:hover{
+    color: #f39422;
+  }
+
+}
+
+
+.ui-btn{
+  margin: 10px 0 20px 0;
+  color: black;
+
+  &:hover{
+    color: #f39422;
+  }
+
+}
