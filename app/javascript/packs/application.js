@@ -1,4 +1,7 @@
 import "bootstrap";
 
 import { initAvatarUploadBtn } from '../signup/sign_up.js';
-initAvatarUploadBtn();
+
+if (window.location.pathname === '/users/sign_up') {
+  initAvatarUploadBtn();
+}
