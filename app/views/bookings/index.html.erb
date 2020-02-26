@@ -2,6 +2,6 @@
 
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.user.name %> <%= booking.pet.name %></li>
+    <li><%= booking.user.username %> <%= booking.pet.name %></li>
   <% end %>
 </ul>
