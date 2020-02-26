@@ -17,8 +17,8 @@ bella = Pet.new(name: 'Bella', price_in_eur: 34.3, pet_type: 'dog', breed: 'labr
 mauwie = Pet.new(name: 'Mauwie', price_in_eur: 3.55, pet_type: 'cat', description: 'My cat mauwie is so awesome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, earum labore fugit sit distinctio molestiae modi dolorum beatae, hic molestias eveniet tempora vel. Officia, doloribus quam illum corporis eveniet ducimus?')
 perry = Pet.new(name: 'Perry', price_in_eur: 300, pet_type: 'parrot', description: 'My parrot perry is so awesome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, earum labore fugit sit distinctio molestiae modi dolorum beatae, hic molestias eveniet tempora vel. Officia, doloribus quam illum corporis eveniet ducimus?')
 
-boris = User.create(username: 'Boris', password: 'Password', email: 'boris@example.com')
-svenia = User.create(username: 'Svenia', password: 'Password', email: 'svenia@example.com')
+boris = User.create(username: 'Boris', password: 'Password', password_confirmation: 'Password', email: 'boris@example.com')
+svenia = User.create(username: 'Svenia', password: 'Password', password_confirmation: 'Password', email: 'svenia@example.com')
 
 avatar_boris = URI.open('https://avatars1.githubusercontent.com/u/2471555?s=460&v=4')
 avatar_svenia = URI.open('https://heroes.ch/wp-content/uploads/2019/10/svenia-wurm-1-600x400.jpg')
