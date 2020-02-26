@@ -12,17 +12,20 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 # create 4 pets
-stinky = Pet.new(name: 'Stinky', price_in_eur: 15, pet_type: 'rhino', description: 'What a great stinky animal and some Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor rerum, tenetur tempore explicabo hic culpa, ab, similique labore officiis ut, placeat! Iusto esse nulla perferendis natus amet nobis quidem repudiandae!')
-bella = Pet.new(name: 'Bella', price_in_eur: 34.3, pet_type: 'dog', breed: 'labrador', description: 'My dog bella is so awesome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, earum labore fugit sit distinctio molestiae modi dolorum beatae, hic molestias eveniet tempora vel. Officia, doloribus quam illum corporis eveniet ducimus?')
-mauwie = Pet.new(name: 'Mauwie', price_in_eur: 3.55, pet_type: 'cat', description: 'My cat mauwie is so awesome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, earum labore fugit sit distinctio molestiae modi dolorum beatae, hic molestias eveniet tempora vel. Officia, doloribus quam illum corporis eveniet ducimus?')
-perry = Pet.new(name: 'Perry', price_in_eur: 300, pet_type: 'parrot', description: 'My parrot perry is so awesome Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, earum labore fugit sit distinctio molestiae modi dolorum beatae, hic molestias eveniet tempora vel. Officia, doloribus quam illum corporis eveniet ducimus?')
+stinky = Pet.new(name: 'Stinky', price_in_eur: 15, pet_type: 'tiger', description: 'Stinky is a great tiger')
+# attach an image to Stinky
+tiger_img = URI.open('https://i.pinimg.com/originals/a2/8c/c9/a28cc94b51b04802f7d033e7c206cbb7.jpg')
+stinky.photos.attach(io: tiger_img, filename: 'tiger.jpg', content_type: 'image/jpg')
+
+bella = Pet.new(name: 'Bella', price_in_eur: 34.3, pet_type: 'dog', breed: 'labrador', description: 'Bella is a great labrador')
+mauwie = Pet.new(name: 'Mauwie', price_in_eur: 3.55, pet_type: 'tiger', description: 'My cat mauwie is so awesome')
+perry = Pet.new(name: 'Perry', price_in_eur: 300, pet_type: 'parrot', description: 'My parrot perry is so awesome')
 
 boris = User.create(username: 'Boris', password: 'Password', password_confirmation: 'Password', email: 'boris@example.com')
 svenia = User.create(username: 'Svenia', password: 'Password', password_confirmation: 'Password', email: 'svenia@example.com')
 
 avatar_boris = URI.open('https://avatars1.githubusercontent.com/u/2471555?s=460&v=4')
 avatar_svenia = URI.open('https://heroes.ch/wp-content/uploads/2019/10/svenia-wurm-1-600x400.jpg')
-
 
 boris.avatar.attach(io: avatar_boris, filename: 'avatar.jpg', content_type: 'image/jpg')
 svenia.avatar.attach(io: avatar_svenia, filename: 'avatar.jpg', content_type: 'image/jpg')
