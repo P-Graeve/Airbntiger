@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
+
   def create
     # create new booking with permitted params
     # check if checkboxes are all ticked (&&)
