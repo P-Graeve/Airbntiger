@@ -35,7 +35,6 @@ class PetsController < ApplicationController
   def update
     @pet = find_pet
     @pet.update(pet_params)
-    @pet.save
     redirect_to pet_path(@pet)
   end
 
