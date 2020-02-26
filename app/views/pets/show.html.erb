@@ -3,7 +3,7 @@
     <div class="col-12 col-md-6 details">
 
       <div class="img-pet">
-        <img src="https://images.unsplash.com/photo-1541414779316-956a5084c0d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1596&q=80" class="img-thumbnail" >
+        <%= cl_image_tag @pet.photos[0] ? @pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9', height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
       </div>
 
       <div class="info">
@@ -14,7 +14,8 @@
 
         <div class="owner-info">
           <img src="#palceholder" class="avatar">
-          <p>Nadine</p>
+          <%= cl_image_tag @pet.user.avatar ? @pet.user.avatar.key : 'tjscfsjpv2f4jhvkd4v9', height: 300, width: 400, crop: :fill %>
+          <p><%= @pet.user.username %></p>
         </div>
       </div>
 
@@ -41,7 +42,7 @@
       </div>
 
 
-      <%= simple_form_for(@booking) do |f| %>
+      <%= simple_form_for([@pet, @booking]) do |f| %>
       <div class="form-group">
         <%= check_box_tag :take_care_of_pet %>
         <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of a dog and give him the care that he needs during the time I take care of him.") %>
