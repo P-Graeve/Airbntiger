@@ -1,3 +1,30 @@
 .form-input {
   border-radius: 25px;
 }
+
+// for file inputs, styling the label to be the button will work
+.file-input {
+  display: none;
+}
+
+label.file {
+  opacity: 0.6;
+  border: 1px solid #dfdfdf;
+  display: block;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #efefef;
+  padding: 4px 10px;
+  transition: opacity 100ms ease-out;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.avatar-preview {
+  width: 30px;
+  border-radius: 50%;
+}
