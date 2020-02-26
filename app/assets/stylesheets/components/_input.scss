@@ -8,13 +8,18 @@
 }
 
 label.file {
+  opacity: 0.6;
   border: 1px solid #dfdfdf;
   display: block;
   height: 50px;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
   background-color: #efefef;
   padding: 4px 10px;
+  transition: opacity 100ms ease-out;
+  &:hover {
+    opacity: 0.8;
+  }
 }
