@@ -4,7 +4,7 @@
       <ul class="pets-list">
         <% @pets.each do |pet| %>
         <li class="ui-card">
-          <%= cl_image_tag (pet.photo.attached? ? pet.photo.key : 'tjscfsjpv2f4jhvkd4v9') %>
+          <%= cl_image_tag (pet.photos[0] ? pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9') %>
           <div id="pet-card-name">
             <%= link_to pet[:name], pet_path(pet) %>
           </div>
