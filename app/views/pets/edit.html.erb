@@ -9,7 +9,10 @@
         <%= f.input :price_in_eur %>
         <%= f.input :pet_type, collection: Pet::PET_TYPES %>
         <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
+        <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <div id="image-container" data-photos="<%= @pet.photos.map { |photo| photo.key } %>">
+
+        </div>
         <%= f.submit("update!", class: "form-actions-btn") %>
         <% end %>
       </div>
