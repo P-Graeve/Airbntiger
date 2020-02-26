@@ -3,3 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.pets-list-anchor a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
