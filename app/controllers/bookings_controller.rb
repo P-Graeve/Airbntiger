@@ -16,8 +16,7 @@ class BookingsController < ApplicationController
       if @booking.save
         redirect_to pet_path(@pet, success: true)
       else
-        raise
-        redirect_to pet_path(@pet)
+        redirect_to pet_path(@pet, success: false, messages: @pet.errors.full_messages)
       end
     else
       # redirect to show path of this specific @pet

@@ -11,6 +11,10 @@ class PetsController < ApplicationController
   end
 
   def show
+    # check if something didnt work
+    if params[:success] == 'false'
+      @error = true
+    end
     @booking = Booking.new
     @pet = find_pet
   end
