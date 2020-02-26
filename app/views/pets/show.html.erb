@@ -42,6 +42,9 @@
 
 
       <%= simple_form_for([@pet, @booking]) do |f| %>
+      <% if @error %>
+        <p class="alert alert-danger">Please check all the boxes!</p>
+      <% end %>
       <div class="form-group">
         <%= check_box_tag :take_care_of_pet %>
         <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of a dog and give him the care that he needs during the time I take care of him.") %>

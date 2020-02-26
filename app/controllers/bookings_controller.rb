@@ -14,10 +14,9 @@ class BookingsController < ApplicationController
       @booking.start_date = Date.parse('14/2/2020')
       @booking.end_date = Date.parse('18/2/2020')
       if @booking.save
-        redirect_to pet_path(@pet, success: true)
+        redirect_to bookings_path
       else
-        raise
-        redirect_to pet_path(@pet)
+        redirect_to pet_path(@pet, success: false, messages: @pet.errors.full_messages)
       end
     else
       # redirect to show path of this specific @pet
