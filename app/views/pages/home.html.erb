@@ -2,7 +2,7 @@
 <main class="landing-banner">
   <div class="ui-card banner-landing-card">
     <h1>Feeling sad? Rent a buddy</h1>
-      <%= form_tag("/search", method: "get") do %>
+      <%= form_tag("/pets", method: "get") do %>
       <%= label_tag(:query, "Search for:") %>
       <%= text_field_tag(:query) %>
       <%= label_tag(:start_date, "Start-Date:") %>
