@@ -10,9 +10,15 @@
     </div>
     <div>
       <% if user_signed_in? %>
-        <span class="mr-3">Welcome <%= current_user.username %></span>
         <%= link_to "Add a Pet", new_pet_path,class: 'nav-btn nav-hover' %>
         <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
+
+        <span class="mx-2">Welcome <%= current_user.username %></span>
+         <% if current_user.avatar.attached? %>
+            <%= link_to root_path do %>
+              <%= cl_image_tag current_user.avatar.key, crop: :fill, width: 30, height: 30, class: 'avatar' %>
+            <% end %>
+         <% end %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: 'nav-btn nav-hover' %>
         <%= link_to "Log in", new_user_session_path, class: 'nav-btn nav-hover' %>
