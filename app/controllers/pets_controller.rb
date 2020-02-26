@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # check if params are present
@@ -25,10 +25,24 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @pet = Pet.find(params[:id])
+    @pet = find_pet
+  end
+
+  def edit
+    @pet = find_pet
+  end
+
+  def update
+    @pet = find_pet
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
   end
 
   private
+
+  def find_pet
+    Pet.find(params[:id])
+  end
 
   def pet_params
     params.require(:pet).permit(:name, :price_in_eur, :description, :pet_type)
