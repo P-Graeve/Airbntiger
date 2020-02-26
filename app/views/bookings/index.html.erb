@@ -1,7 +1,19 @@
-<h1>My bookings</h1>
+<div class="container">
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.user.username %> <%= booking.pet.name %></li>
-  <% end %>
-</ul>
+  <h1>Welcome <%= @current_user.username %> to your bookings </h1>
+
+  <div class="ui-bookings-card">
+  <ul>
+    <% @bookings.each do |booking| %>
+    <li> Client : <%= booking.user.username %></li>
+    <li> Pet Name : <%= booking.pet.name %></li>
+    <% end %>
+  </ul>
+
+  <div class="booking-status">
+    <p>Booked!</p>
+  </div>
+  </div>
+
+
+</div>
