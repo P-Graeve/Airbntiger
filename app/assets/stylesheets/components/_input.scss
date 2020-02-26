@@ -19,6 +19,7 @@ label.file {
   background-color: #efefef;
   padding: 4px 10px;
   transition: opacity 100ms ease-out;
+  cursor: pointer;
   &:hover {
     opacity: 0.8;
   }
