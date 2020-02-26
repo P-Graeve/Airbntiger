@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-6 offset-3 mb-5 mt-5">
+      <div class="ui-card">
+
+        <h1>Edit the Infos of your pet</h1>
+        <%= simple_form_for (@pet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :price_in_eur %>
+        <%= f.input :pet_type, collection: Pet::PET_TYPES %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
