@@ -9,10 +9,20 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap');
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  font-family:'Montserrat';
+}
+
+h1 {
+  font-family: 'Quicksand';
+}
 
 ul {
   list-style: none;
