@@ -10,6 +10,11 @@ class PetsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.new
+    @pet = find_pet
+  end
+
   def new
     @pet = Pet.new
   end
@@ -23,11 +28,6 @@ class PetsController < ApplicationController
     end
   end
 
-  def show
-    @booking = Booking.new
-    @pet = find_pet
-  end
-
   def edit
     @pet = find_pet
   end
@@ -36,6 +36,12 @@ class PetsController < ApplicationController
     @pet = find_pet
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
+  end
+
+  def destroy
+    @pet = find_pet
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private
@@ -47,6 +53,5 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:name, :price_in_eur, :description, :pet_type)
   end
-
 
 end
