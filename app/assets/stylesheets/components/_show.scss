@@ -17,11 +17,28 @@ margin-bottom: 30px;
 .info  {
 
   justify-content: space-between;
+  display: flex;
 
 }
 .booking-card{
   margin: 60px 0px;
-
-  height: 615px;
+  padding: 40px;
+  height: 625px;
+  border-radius: 8px;
 
 }
+
+.booking-details {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.total-cost p {
+  border-top: solid #d4d7dd;
+  padding-top: 10px;
+}
+
+.owner-info {
+  padding-right: 25px;
+}
+
