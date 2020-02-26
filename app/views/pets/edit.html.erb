@@ -10,7 +10,7 @@
         <%= f.input :pet_type, collection: Pet::PET_TYPES %>
         <%= f.input :description %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+        <%= f.submit("update!", class: "form-actions-btn") %>
         <% end %>
       </div>
     </div>
