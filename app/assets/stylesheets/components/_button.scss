@@ -20,8 +20,6 @@
   }
 }
 
-
-
 .login-form-btn{
   background-color: #d4d7dd;
   border-radius: 10px;
@@ -35,7 +33,6 @@
 
 }
 
-
 .ui-btn{
   margin: 10px 0 20px 0;
   color: black;
@@ -45,7 +42,19 @@
   }
 
 }
-.booking-btn {
-  margin-top: 10px;
+.booking-btn{
   text-align: center;
+}
+.booking-btn input {
+  background-color: #d4d7dd;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-style: none;
+  padding: 5px;
+  width: 80px;
+
+  &:hover{
+    color: #f39422;
+  }
+
 }
