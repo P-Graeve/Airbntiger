@@ -35,6 +35,10 @@ class PetsController < ApplicationController
 
   def edit
     @pet = find_pet
+    if @pet.user == current_user
+    else
+      redirect_to pet_path(@pet)
+    end
   end
 
   def update
