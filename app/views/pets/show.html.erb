@@ -63,5 +63,8 @@
       </div>
       <% end %>
     </div>
+
+      <%= link_to "Edit", edit_pet_path, class: 'edit-pet-btn' %>
+      <%= link_to "Delete Pet", pet_path(@pet), class: 'delte-pet-btn', method: :delete, data: {confirm: 'Are you sure?'}%>
   </div>
 </div>
