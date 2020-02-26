@@ -13,8 +13,7 @@
         </div>
 
         <div class="owner-info">
-          <img src="#palceholder" class="avatar">
-          <%= cl_image_tag @pet.user.avatar ? @pet.user.avatar.key : 'tjscfsjpv2f4jhvkd4v9', height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @pet.user.avatar.try(:key).present? ? @pet.user.avatar.key : '#placeholder', height: 40, width: 40, crop: :fill, class: 'avatar' %>
           <p><%= @pet.user.username %></p>
         </div>
       </div>
