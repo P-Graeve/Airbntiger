@@ -5,8 +5,11 @@
   <div class="ui-bookings-card">
   <ul>
     <% @bookings.each do |booking| %>
-    <li> Client : <%= booking.user.username %></li>
-    <li> Pet Name : <%= booking.pet.name %></li>
+    <li>Client: <strong><%= booking.user.username %></strong></li>
+    <li>Pet Name: <strong><%= booking.pet.name %></strong></li>
+    <li></li>
+    <li>Start Date: <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong></li>
+    <li>End Date: <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong></li>
     <% end %>
   </ul>
 
