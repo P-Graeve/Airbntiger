@@ -1,2 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.ui-card img {
+  width: 300px;
+}
+
+#pet-card-name a {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}

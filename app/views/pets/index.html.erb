@@ -3,9 +3,12 @@
     <div class="col-12">
       <ul class="pets-list">
         <% @pets.each do |pet| %>
-          <li class="ui-card pet-card">
-            <%= pet.name %>
-          </li>
+        <li class="ui-card">
+          <%= cl_image_tag (pet.photo.attached? ? pet.photo.key : 'tjscfsjpv2f4jhvkd4v9') %>
+          <div id="pet-card-name">
+            <%= link_to pet[:name], pet_path(pet) %>
+          </div>
+        </li>
         <% end %>
       </ul>
     </div>
