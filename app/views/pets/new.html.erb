@@ -11,6 +11,9 @@
           <%= f.input :pet_type, collection: Pet::PET_TYPES %>
           <%= f.input :description %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <div id="img-container">
+
+          </div>
           <%= f.submit %>
           <% end %>
 
