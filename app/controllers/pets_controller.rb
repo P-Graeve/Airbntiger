@@ -33,7 +33,7 @@ class PetsController < ApplicationController
     @pet = find_pet
     if @pet.user == current_user
     else
-      redirect_to new_user_registration_path
+      redirect_to pet_path(@pet)
     end
   end
 
