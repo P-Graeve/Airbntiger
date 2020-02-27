@@ -19,6 +19,8 @@ gem 'webpacker'
 gem 'devise'
 
 gem 'cloudinary', '~> 1.12.0'
+gem 'pg_search'
+
 
 
 group :development do
