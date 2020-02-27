@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # save the geolocation of the user
     return unless @user.valid?
 
-    user_geolocation = Geolocation.new(latitude: 0.332342)
+    user_geolocation = Geolocation.new(sign_up_coords_params)
     user_geolocation.user = @user
 
     # check if the coordinates were properly passed thru
