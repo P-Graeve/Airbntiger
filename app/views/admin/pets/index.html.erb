@@ -1,0 +1,9 @@
+<main class="container">
+  <h1>My pets</h1>
+  <ul>
+    <% @pets.each do |pet| %>
+      <li><%= pet.name %></li>
+      <li><%= pet.user.username %></li>
+    <% end %>
+  </ul>
+</main>
