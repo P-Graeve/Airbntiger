@@ -4,7 +4,7 @@ class Pet < ApplicationRecord
   has_many_attached :photos
 
   # constant TYPES has array of all allowed types of pets
-  PET_TYPES = %w(dog hamster cat tiger lion rhino fish turtle iguana rat parrot)
+  PET_TYPES = %w(Dog Hamster Cat Tiger Lion Rhino Fish Turtle Iguana Rat Parrot)
 
   # validate if name is present
   validates :name, presence: true
