@@ -1,22 +1,47 @@
 
-.container h1{
+.container h1 {
   padding-top: 20px;
 }
-.ui-bookings-card{
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  box-shadow: 1px 1px 10px rgba(0,0,0,.3);
-  margin: 30px 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 40%;
+
+.booking-picture {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
+.booking-status {
+  color: #008001;
+  &:hover {
+    text-decoration: none;
+    color: #00af00;
+  }
+}
+
+.bookings-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
 
 }
 
-.booking-status{
-  margin-left: 40px;
-  color: green;
-  margin-top: 10px;
+.bookings-list > li {
+  color: #000;
+}
 
+
+.booking-h2 {
+  font-family: $headers-font;
+  font-weight: lighter;
+}
+
+
+.ui-bookings-card {
+  display: flex;
+  background-color: white;
+  height: 120px;
+  margin: 25px 0;
+  width: 1000px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.3);
 }
