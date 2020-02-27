@@ -1,0 +1,13 @@
+<div  class="ui-bookings-card">
+  <div>
+    <%= cl_image_tag booking.pet.photos[0] ? booking.pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9', class: "booking-picture" %>
+  </div>
+  <ul class="bookings-list">
+    <li>Client: <strong><%= booking.user.username %></strong></li>
+    <li>Pet Name: <strong><%= booking.pet.name %></strong></li>
+    <li>Start Date: <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong></li>
+    <li>End Date: <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong></li>
+    <li>You had the animal for <%= (booking.end_date - booking.start_date + 1).to_i %> days. </li>
+    <%= link_to "Booked!", pet_path(booking.pet), class: "booking-status" %>
+  </ul>
+</div>
