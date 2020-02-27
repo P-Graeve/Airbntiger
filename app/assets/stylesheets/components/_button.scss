@@ -5,29 +5,29 @@
   text-decoration: none;
   &:hover {
     text-decoration: none;
-    color: #1c1c1c;
+    color: $ui-black;
   }
 }
 
 .form-actions-btn{
-  background-color: #d4d7dd;
+  background-color: $ui-gray;
   border-radius: 10px;
   width: 80px;
   margin-bottom: 10px;
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 }
 
 .login-form-btn{
-  background-color: #d4d7dd;
+  background-color: $ui-gray;
   border-radius: 10px;
   width: 100px;
   margin: 10px 0 20px 0;
   color: black;
 
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 
 }
@@ -37,7 +37,7 @@
   color: black;
 
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 
 }
@@ -45,7 +45,7 @@
   text-align: center;
 }
 .booking-btn input {
-  background-color: #d4d7dd;
+  background-color: $ui-gray;
   border-radius: 5px;
   margin-top: 10px;
   border-style: none;
@@ -53,7 +53,7 @@
   width: 80px;
 
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 
 }
@@ -61,7 +61,7 @@
   margin: 10px 0 20px 15px;
   color: black;
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 
 }
@@ -69,7 +69,7 @@
   margin: 10px 0 20px 10px;
   color: black;
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 }
 .view-btn{
