@@ -24,6 +24,8 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password", class: 'form-input' } %>
+          <%= f.hidden :latitude %>
+          <%= f.hidden :longtitude %>
         </div>
 
         <div class="form-actions">
