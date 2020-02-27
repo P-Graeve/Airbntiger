@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_151648) do
+ActiveRecord::Schema.define(version: 2020_02_27_125708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_02_25_151648) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "geolocations", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longtitude"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_geolocations_on_user_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.float "price_in_eur"
@@ -75,5 +84,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_151648) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users"
+  add_foreign_key "geolocations", "users"
   add_foreign_key "pets", "users"
 end
