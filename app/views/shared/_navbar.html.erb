@@ -5,11 +5,12 @@
         <%= image_tag "tiger_noborder.svg", alt: "Tiger Illustration", height: 45 %>
       <% end %>
       <form action="/pets">
-        <input class="nav-btn nav-search" type="text" name="query" placeholder="Search..">
+        <input class="nav-btn nav-search" type="text" name="query" placeholder="Search.." value="<%= params[:query] || '' %>">
       </form>
     </div>
     <div>
       <% if user_signed_in? %>
+        <%= link_to "My Pets", admin_pets_path,class: 'nav-btn nav-hover' %>
         <%= link_to "Add a Pet", new_pet_path,class: 'nav-btn nav-hover' %>
         <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
 
