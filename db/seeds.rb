@@ -10,6 +10,7 @@ require "open-uri"
 loadImages = false
 # remove all pets
 puts "Cleaning DB..."
+Geolocation.destroy_all
 Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
