@@ -47,7 +47,7 @@
       <% end %>
       <div class="form-group">
         <%= check_box_tag :take_care_of_pet %>
-        <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of a dog and give him the care that he needs during the time I take care of him.") %>
+        <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of #{@pet.name} and give him the care that he needs during the time I take care of him.") %>
       </div>
       <div class="form-group">
         <%= check_box_tag :dont_kill_pet %>
