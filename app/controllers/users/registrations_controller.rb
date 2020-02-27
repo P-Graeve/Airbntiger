@@ -15,20 +15,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # save the geolocation of the user
     return unless @user.valid?
 
-    user_geolocation = Geolocation.new(sign_up_coords_params)
+    user_geolocation = Geolocation.new(latitude: 0.332342)
     user_geolocation.user = @user
 
     # check if the coordinates were properly passed thru
     if user_geolocation.save
       # check is there are last_page params present
       if params[:last_page].present?
-        redirect_to params[:last_page]
+        # redirect_to params[:last_page]
+        return
       else
         # redirect to the home page
         redirect_to root_path
       end
     else
-      redirect_to new_registration_path(geo: false)
+      # something went wrong when saving the geolocation
+      # we cannot use this app without the geolocation, so we'd have to delete the user and say something went wrong
+      user = @user
+      @user.destroy
+      return
+      # redirect_to new_user_registration_path(geo: false)
     end
   end
 
