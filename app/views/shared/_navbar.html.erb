@@ -10,6 +10,7 @@
     </div>
     <div>
       <% if user_signed_in? %>
+        <%= link_to "My Pets", admin_pets_path,class: 'nav-btn nav-hover' %>
         <%= link_to "Add a Pet", new_pet_path,class: 'nav-btn nav-hover' %>
         <%= link_to "Sign out", destroy_user_session_path, class: 'nav-btn nav-hover', method: :delete %>
 
