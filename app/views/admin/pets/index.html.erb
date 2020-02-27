@@ -1,9 +1,35 @@
 <main class="container">
-  <h1>My pets</h1>
-  <ul>
-    <% @pets.each do |pet| %>
-      <li><%= pet.name %></li>
-      <li><%= pet.user.username %></li>
-    <% end %>
-  </ul>
+  <h1>My pets:</h1>
+  <div class="row">
+    <div class="col-12">
+      <div class="admin-pets-list">
+        <% @pets.each do |pet| %>
+        <div class="admin-pet-card">
+          <%= cl_image_tag (pet.photos[0] ? pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9'), class: "admin-pet-card-img" %>
+          <div class='admin-pet-card-name'>
+            <h3><%= pet.name %></h3>
+            <p><%= pet.pet_type %></p>
+            <p><%= pet.description %></p>
+            <%= link_to "View Pet Profile", pet_path(pet), class: 'view-btn' %>
+          </div>
+          <div class="pet-bookings">
+            <% if !pet.bookings.empty? %>
+            <p><%= "Bookings for your pet:" %></p>
+            <ul>
+              <% pet.bookings.each do |booking| %>
+                <li>
+                  <p><%= booking.start_date %> - <%= booking.end_date %></p>
+                </li>
+                <li class="booking-user">with <%= booking.user.username %></li>
+              <%end%>
+            </ul>
+            <%else%>
+            <p><%= "No Bookings" %></p>
+            <%end%>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </main>
