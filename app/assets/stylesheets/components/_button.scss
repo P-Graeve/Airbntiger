@@ -78,6 +78,29 @@
   margin-left: 10px;
   padding: 5px;
   &:hover{
-    color: #f39422;
+    color: $ui-orange;
   }
 }
+.edit-btn{
+color: black;
+font-size: 12px;
+padding: 5px;
+  &:hover{
+    color: $ui-orange;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
