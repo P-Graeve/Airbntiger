@@ -25,7 +25,9 @@ class Pet < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
 
-  def distance
-    5
+  def distance(geolocation)
+    # calculate the amount of distance between the current user and the user that belongs this pet
+    user.geolocation
+
   end
 end

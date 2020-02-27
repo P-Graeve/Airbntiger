@@ -9,7 +9,9 @@
             <%= link_to pet[:name], pet_path(pet) %>
           </div>
           <div class="pet-card-distance">
-            <p><%= pet.distance %> kms away</p>
+            <% if user_signed_in? %>
+              <p><%= pet.distance(current_user.geolocation) %> kms away</p>
+            <% end %>
           </div>
         </li>
         <% end %>
