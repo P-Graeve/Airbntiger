@@ -11,6 +11,10 @@
 
 .booking-status {
   color: #008001;
+  &:hover {
+    text-decoration: none;
+    color: #00af00;
+  }
 }
 
 .bookings-list {
@@ -24,6 +28,12 @@
 
 .bookings-list > li {
   color: #000;
+}
+
+
+.booking-h2 {
+  font-family: $headers-font;
+  font-weight: lighter;
 }
 
 
