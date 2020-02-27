@@ -24,4 +24,11 @@ class Pet < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  def distance(geolocation)
+    # calculate the amount of distance between the current user and the user that belongs this pet
+    pet = user.geolocation
+    user = geolocation
+    Geocoder::Calculations.distance_between([pet.latitude, pet.longtitude], [user.latitude, user.longtitude]).round
+  end
 end

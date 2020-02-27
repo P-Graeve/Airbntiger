@@ -10,14 +10,10 @@
   object-fit: cover;
 }
 
-#pet-card-name a {
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  color: #000;
+a {
+  color: $ui-black;
   &:hover {
+    color: $ui-black;
     text-decoration: none;
-    color: #000;
   }
 }
