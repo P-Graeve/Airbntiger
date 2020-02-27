@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  namespace :admin do
+    resources :pets, only: :index
+  end
+
   resources :pets do
     resources :bookings, only: [:create]
   end
