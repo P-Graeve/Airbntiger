@@ -1,8 +1,8 @@
 .pet-description {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-top: solid #d4d7dd;
-  border-bottom: solid #d4d7dd;
+  border-top: solid $ui-gray;
+  border-bottom: solid $ui-gray;
 }
 .img-pet {
 margin-top: 60px;
@@ -34,7 +34,7 @@ margin-bottom: 30px;
   padding-bottom: 20px;
 }
 .total-cost p {
-  border-top: solid #d4d7dd;
+  border-top: solid $ui-gray;
   padding-top: 10px;
 }
 
