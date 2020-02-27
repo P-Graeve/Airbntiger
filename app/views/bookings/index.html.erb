@@ -1,22 +1,23 @@
 <main class="container">
-
-  <h1>Welcome <%= @current_user.username %> to your bookings </h1>
-
-  <div class="ui-bookings-card">
-  <ul>
-    <% @bookings.each do |booking| %>
-    <li>Client: <strong><%= booking.user.username %></strong></li>
-    <li>Pet Name: <strong><%= booking.pet.name %></strong></li>
-    <li></li>
-    <li>Start Date: <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong></li>
-    <li>End Date: <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong></li>
-    <% end %>
-  </ul>
-
-  <div class="booking-status">
-    <p>Booked!</p>
+  <div class="row">
+    <div class="col-12">
+      <h1>Welcome <%= @current_user.username %> to your bookings </h1>
+        <ul  class="ui-bookings-card">
+          <% @bookings.each do |booking| %>
+          <div>
+            <%= cl_image_tag booking.pet.photos[0] ? booking.pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9', class: "booking-picture" %>
+          </div>
+          <div  class="bookings-list">
+            <li>Client: <strong><%= booking.user.username %></strong></li>
+            <li>Pet Name: <strong><%= booking.pet.name %></strong></li>
+            <li>Start Date: <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong></li>
+            <li>End Date: <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong></li>
+            <li><em>You had the animal for <%= (booking.end_date - booking.start_date + 1).to_i %> days.<em></li>
+            <% end %>
+            <p class="booking-status">Booked!</p>
+          </ul>
+      </div>
+    </div>
   </div>
-  </div>
-
 
 </main>
