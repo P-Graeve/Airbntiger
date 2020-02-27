@@ -27,7 +27,8 @@ class Pet < ApplicationRecord
 
   def distance(geolocation)
     # calculate the amount of distance between the current user and the user that belongs this pet
-    user.geolocation
-
+    pet = user.geolocation
+    user = geolocation
+    Geocoder::Calculations.distance_between([pet.latitude, pet.longtitude], [user.latitude, user.longtitude]).round
   end
 end
