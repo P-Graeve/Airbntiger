@@ -10,7 +10,7 @@
             <h3><%= pet.name %></h3>
             <p><%= pet.pet_type %></p>
             <p><%= pet.description %></p>
-            <%= link_to "View Pet Profile", pet_path(pet), class: 'view-btn' %>
+            <p><%= link_to "View Pet Profile", pet_path(pet), class: 'view-btn' %> <%= link_to "Edit", edit_pet_path(pet), class: 'edit-btn' %> </p>
           </div>
           <div class="pet-bookings">
             <% if !pet.bookings.empty? %>
