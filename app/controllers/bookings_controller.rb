@@ -13,8 +13,14 @@ class BookingsController < ApplicationController
       @booking = Booking.new
       @booking.user = current_user
       @booking.pet = @pet
-      @booking.start_date = Date.parse('14/2/2020')
-      @booking.end_date = Date.parse('18/2/2020')
+      s_year = booking_params["start_date(1i)"]
+      s_month = booking_params["start_date(2i)"]
+      s_day = booking_params["start_date(3i)"]
+      e_year = booking_params["end_date(1i)"]
+      e_month = booking_params["end_date(2i)"]
+      e_day = booking_params["end_date(3i)"]
+      @booking.start_date = Date.parse("#{s_day}/#{s_month}/#{s_year}")
+      @booking.end_date = Date.parse("#{e_day}/#{e_month}/#{e_year}")
       if @booking.save
         redirect_to bookings_path
       else
@@ -26,10 +32,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  # private
-#
-  # def booking_params
-     # params.require(:booking).permit(:date)
-#
-  # end
+  private
+
+  def booking_params
+    params.require(:booking).permit("start_date(1i)", "start_date(2i)", "start_date(3i)", "end_date(1i)", "end_date(2i)", "end_date(3i)")
+  end
 end
