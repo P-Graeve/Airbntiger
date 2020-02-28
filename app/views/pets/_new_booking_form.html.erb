@@ -1,44 +1,50 @@
   <div class="col-12 col-md-6 booking-card ui-card">
-    <h6 class="booking-details"><strong><%= pet.price_in_eur%> €/ per day</strong></h6>
-    <h6 class="booking-details"><strong>Date:
-    14/2/20-18/2/20</strong></h6>
+    <% if current_user == pet.user %>
+      <%# If the current user is the owner of the pet, show the calendar %>
+      <div id="calendar">
+        <%# Display the calendar here! %>
+      </div>
+    <% else %>
+      <%# Display the form to create a booking %>
+      <%= simple_form_for([pet, booking]) do |f| %>
+      <div class="total-cost">
+        <p >4 x 15€</p>
+        <p > Total: 60 € </p>
 
-    <div class="total-cost">
-      <p >4 x 15€</p>
-      <p > Total: 60 € </p>
+      </div>
+      <h5 class="booking-details"><strong><%= pet.price_in_eur%> €/ per day</strong></h5>
+      <h5 class="booking-details"><strong>Date:
+      14/2/20-18/2/20</strong></h5>
 
-    </div>
+      <% if error %>
+        <p class="alert alert-danger">Please check all the boxes!</p>
+      <% end %>
 
-    <%= simple_form_for([pet, booking]) do |f| %>
+      <div class="form-group">
+        <%= check_box_tag :take_care_of_pet %>
+        <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of a #{@pet.pet_type.downcase} and give him the care that he needs during the time I take care of him.") %>
+      </div>
 
-    <% if error %>
-      <p class="alert alert-danger">Please check all the boxes!</p>
-    <% end %>
+      <div class="form-group">
+        <%= check_box_tag :dont_kill_pet %>
+        <%= label_tag(:dont_kill_pet, "I won’t kill #{@pet.name}.") %>
+      </div>
 
-    <div class="form-group">
-      <%= check_box_tag :take_care_of_pet %>
-      <%= label_tag(:take_care_of_pet, "I hereby declare that I can take care of a #{@pet.pet_type.downcase} and give him the care that he needs during the time I take care of him.") %>
-    </div>
+      <div class="form-group">
+        <%= check_box_tag :contact_owner %>
+        <%= label_tag(:contact_owner, "I will ring the owner in case of emergency.") %>
+      </div>
 
-    <div class="form-group">
-      <%= check_box_tag :dont_kill_pet %>
-      <%= label_tag(:dont_kill_pet, "I won’t kill #{@pet.name}.") %>
-    </div>
+      <div class="form-group">
+        <%= check_box_tag :agree_to_terms %>
+        <%= label_tag(:agree_to_terms, "I agree with the terms of service of AirbnTiger") %>
+      </div>
 
-    <div class="form-group">
-      <%= check_box_tag :contact_owner %>
-      <%= label_tag(:contact_owner, "I will ring the owner in case of emergency.") %>
-    </div>
+      <div class="booking-btn">
+        <%= submit_tag("Book!") %>
+      </div>
 
-    <div class="form-group">
-      <%= check_box_tag :agree_to_terms %>
-      <%= label_tag(:agree_to_terms, "I agree with the terms of service of AirbnTiger") %>
-    </div>
-
-    <div class="booking-btn">
-      <%= submit_tag("Book!") %>
-    </div>
-
+      <% end %>
     <% end %>
 
   </div>
