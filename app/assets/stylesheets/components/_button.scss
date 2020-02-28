@@ -76,7 +76,7 @@
   color: black;
   font-size: 12px;
   margin-left: 10px;
-  padding: 5px;
+  padding-left: 10px;
   &:hover{
     color: $ui-orange;
   }
@@ -84,7 +84,7 @@
 .edit-btn{
 color: black;
 font-size: 12px;
-padding: 5px;
+padding-left: 5px;
   &:hover{
     color: $ui-orange;
   }
