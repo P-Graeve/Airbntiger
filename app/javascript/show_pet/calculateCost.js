@@ -29,7 +29,7 @@ export const calculateCost = () => {
   const startingDay = new Date(starting);
   const endingDay = new Date(ending);
 
-  const day = -1 * (((startingDay - endingDay) /  86400000) + 1);
+  const day = ((endingDay - startingDay) / 86400000) + 1;
   const inject = document.querySelector("#calc");
   if (inject) {
     inject.innerHTML = `${day} days`;
