@@ -1,13 +1,19 @@
 <div  class="ui-bookings-card">
-  <div>
-    <%= cl_image_tag booking.pet.photos[0] ? booking.pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9', class: "booking-picture" %>
+
+  <%= cl_image_tag booking.pet.photos[0] ? booking.pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9', class: "bookings-card-image" %>
+
+  <div style="">
+    <h3><strong><%= booking.pet.name %></strong></h3>
   </div>
-  <ul class="bookings-list">
-    <li>Client: <strong><%= booking.user.username %></strong></li>
-    <li>Pet Name: <strong><%= booking.pet.name %></strong></li>
-    <li>Start Date: <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong></li>
-    <li>End Date: <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong></li>
-    <li>You had the animal for <%= (booking.end_date - booking.start_date + 1).to_i %> days. </li>
+
+  <div class="d-flex align-items-center" style="flex-grow: 1">
+    <strong><%= booking.start_date.strftime('%d/%m/%Y') %></strong>
+    <i style="font-size: 0.8em;" class="fas fa-arrow-right mx-2"></i>
+    <strong><%= booking.end_date.strftime('%d/%m/%Y') %></strong>
+    <span class="ml-2">(<%= (booking.end_date - booking.start_date + 1).to_i %> days)</span>
+  </div>
+
+  <div>
     <%= link_to "Booked!", pet_path(booking.pet), class: "booking-status" %>
-  </ul>
+  </div>
 </div>

@@ -1,13 +1,13 @@
 .pet-description {
+  padding: 20px 0;
   margin-top: 20px;
   margin-bottom: 20px;
   border-top: solid $ui-gray;
   border-bottom: solid $ui-gray;
 }
 .img-pet {
-margin-top: 60px;
-margin-bottom: 30px;
-
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .pet-price {
@@ -15,15 +15,11 @@ margin-bottom: 30px;
 }
 
 .info  {
-
   justify-content: space-between;
   display: flex;
-
 }
 
-
 .booking-details {
-
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -33,6 +29,10 @@ margin-bottom: 30px;
 }
 
 .owner-info {
-  padding-right: 25px;
+  display: flex;
+  align-items: center;
+  p {
+    margin: 0 10px;
+  }
 }
 
