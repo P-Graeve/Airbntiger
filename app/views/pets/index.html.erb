@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-12">
       <ul class="pets-list">
+        <% if @pets.empty? %>
+        <p><%="Aww. No results found"%></p>
+        <% else %>
         <% @pets.each do |pet| %>
         <li class="ui-card">
           <%= cl_image_tag (pet.photos[0] ? pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9') %>
@@ -9,6 +12,7 @@
             <%= link_to pet[:name], pet_path(pet) %>
           </div>
         </li>
+        <% end %>
         <% end %>
       </ul>
     </div>
