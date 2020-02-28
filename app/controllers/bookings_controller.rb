@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
       e_day = booking_params["end_date(3i)"]
       @booking.start_date = Date.parse("#{s_day}/#{s_month}/#{s_year}")
       @booking.end_date = Date.parse("#{e_day}/#{e_month}/#{e_year}")
+
       if @booking.save
         redirect_to bookings_path
       else
