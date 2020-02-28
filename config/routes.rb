@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :pets do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index] do
+    resources :reviews, only: [:create]
+  end
 end
