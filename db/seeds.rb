@@ -73,6 +73,7 @@ else
   booking = Booking.new(start_date: Date.parse('29/2/2020'), end_date: Date.parse('3/3/2020'))
   booking.user = svenia
   booking.pet = stinky
+  Review.create(content: "Well trained pet.", rating: 5, user: svenia, booking: booking)
   booking.save
 
   puts "You have #{Pet.count} pets now and #{Booking.count} bookings"
