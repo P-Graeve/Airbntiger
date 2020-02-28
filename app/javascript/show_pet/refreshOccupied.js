@@ -3,7 +3,7 @@ const injectOccupiedInCalendar = (periods, selectedMonth) => {
   const tds = document.querySelectorAll('.selected-month td');
   const year = 2020; // TODO: make this dynamic
   const month = selectedMonth - 1;
-  console.log(periods);
+  // console.log(periods);
   tds.forEach(td => {
     // create a new date with the infos
     const thisDate = new Date(year, month, td.innerText);
@@ -28,6 +28,8 @@ export const refreshOccupied = (selectedMonth) => {
   const dateStr = document.querySelector("#calendar").dataset.dates;
   const datePeriods = dateStr.split('|').map(str => {
     const arr = str.split('-');
+    arr[0] = parseInt(arr[0]) + 2000;
+    console.log(arr);
     return new Date(arr[0], arr[1], arr[2]);
   });
   injectOccupiedInCalendar(datePeriods, selectedMonth);
