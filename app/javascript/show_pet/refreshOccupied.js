@@ -6,13 +6,20 @@ const injectOccupiedInCalendar = (periods, selectedMonth) => {
   console.log(periods);
   tds.forEach(td => {
     // create a new date with the infos
-    // console.log(td.innerText);
     const thisDate = new Date(year, month, td.innerText);
-    if (thisDate) {
-      if (periods[0] <= thisDate && periods[1] >= thisDate) {
-        console.log('occupied!');
+
+    periods.forEach((period, i) => {
+      if (i % 2 === 0) {
+        // these are start dates
+        const startDate = period;
+        const endDate = periods[i + 1];
+        // check if it is in between dates
+        if (startDate <= thisDate && endDate >= thisDate) {
+          // pet is occupied!
+          td.classList.add('occupied');
+        }
       }
-    }
+    });
   });
 }
 
