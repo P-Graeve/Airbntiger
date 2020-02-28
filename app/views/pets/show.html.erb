@@ -23,9 +23,17 @@
         <%= @pet.description %>
 
       </div>
-      <div class="pet-price">
-        <h6>Price:</h6>
-        <p><%= @pet.price_in_eur%> €/ per day</p>
+      <div class="pet-reviews">
+        <h6>Reviews:</h6>
+        <% @pet.reviews.each do |review| %>
+          <div class="pet-review">
+            <%=review.content%>
+
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 
