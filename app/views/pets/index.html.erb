@@ -3,7 +3,7 @@
     <div class="col-12">
       <ul class="pets-list">
         <% if @pets.empty? %>
-        <p><%="Aww. No results found"%></p>
+        <p class="no-result-message"><%="Aww. No results found"%></p>
         <% else %>
         <% @pets.each do |pet| %>
         <li class="ui-card">
