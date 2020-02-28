@@ -1,8 +1,13 @@
   <div class="col-12 col-md-6 booking-card ui-card">
     <% if current_user == pet.user %>
       <%# If the current user is the owner of the pet, show the calendar %>
+
       <div id="calendar">
         <%# Display the calendar here! %>
+      </div>
+      <div class="d-flex" style="justify-content: space-between">
+        <button class="btn btn-link" id="previous-month">Previous month</button>
+        <button class="btn btn-link" id="next-month">Next month</button>
       </div>
     <% else %>
       <%# Display the form to create a booking %>
