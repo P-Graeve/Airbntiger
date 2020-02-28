@@ -1,6 +1,6 @@
 export const initEventListenerOnLandingPage = () => {
   const form = document.querySelector("#search-form");
-
+  console.log("bleh")
   if (form) {
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -10,6 +10,7 @@ export const initEventListenerOnLandingPage = () => {
       const eDate = document.querySelector("#search_end_date").value
       const endDate = new Date(eDate)
       localStorage.setItem('end-date', endDate);
+      form.submit();
     });
   }
 }
