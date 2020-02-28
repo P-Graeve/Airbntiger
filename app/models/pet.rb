@@ -31,4 +31,10 @@ class Pet < ApplicationRecord
     user = geolocation
     Geocoder::Calculations.distance_between([pet.latitude, pet.longtitude], [user.latitude, user.longtitude]).round
   end
+
+  def occupied_dates
+    str = bookings.map do |booking|
+      "#{booking.start_date.strftime('%y-%m-%d')}|#{booking.end_date.strftime('%y-%m-%d')}"
+    end.join('|')
+  end
 end

@@ -7,5 +7,8 @@ table.month {
   width: 100%;
   td {
     height: 50px;
+    &.occupied {
+      background-color: red;
+    }
   }
 }

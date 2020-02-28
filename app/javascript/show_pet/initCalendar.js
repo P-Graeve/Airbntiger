@@ -1,5 +1,9 @@
 import Calendar from 'js-year-calendar';
 
+import { refreshOccupied } from './refreshOccupied';
+let date = new Date();
+let selectedMonth = date.getMonth() + 1;
+
 const displayCurrentMonth = () => {
   const monthContainers = document.querySelectorAll('.month-container');
   monthContainers.forEach(container => {
@@ -13,7 +17,7 @@ const displayCurrentMonth = () => {
       // add identifier class
       container.classList.add('selected-month')
     }
-  })
+  });
 }
 
 const previousMonth = e => {
@@ -34,6 +38,8 @@ const previousMonth = e => {
       container.classList.add('selected-month');
     }
   });
+  selectedMonth -= 1;
+  refreshOccupied(selectedMonth);
 }
 
 const nextMonth = e => {
@@ -49,6 +55,8 @@ const nextMonth = e => {
       container.classList.add('selected-month');
     }
   });
+  selectedMonth += 1;
+  refreshOccupied(selectedMonth);
 }
 
 const initMonthButtons = () => {
@@ -57,6 +65,8 @@ const initMonthButtons = () => {
 
   prev.addEventListener('click', previousMonth);
   next.addEventListener('click', nextMonth);
+
+  refreshOccupied(selectedMonth);
 }
 
 export const initCalendar = () => {
