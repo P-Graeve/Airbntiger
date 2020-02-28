@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-12">
       <ul class="pets-list">
+        <% if @pets.empty? %>
+        <p class="no-result-message"><%="Aww. No results found"%></p>
+        <% else %>
         <% @pets.each do |pet| %>
         <%= link_to pet_path(pet) do %>
           <li class="ui-card search-result-card">
@@ -17,6 +20,7 @@
               </div>
             </div>
           </li>
+        <% end %>
         <% end %>
         <% end %>
       </ul>
