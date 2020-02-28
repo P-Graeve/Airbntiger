@@ -6,6 +6,7 @@ import { initPhotosChange } from '../new_pet/new_pet';
 import { refreshImages } from '../edit_pet/edit_pet';
 import { initEventListenerOnLandingPage } from '../homepage/submit_event';
 import { initCalendar } from '../show_pet/initCalendar';
+import { injectInitialDatesInForm } from '../show_pet/getDates';
 
 if (window.location.pathname === '/users/sign_up') {
   initAvatarUploadBtn();
@@ -20,5 +21,6 @@ if (window.location.pathname.match(/edit/)) {
   refreshImages();
 }
 
+injectInitialDatesInForm();
 initEventListenerOnLandingPage();
 initCalendar();
