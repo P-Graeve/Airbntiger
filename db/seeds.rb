@@ -11,6 +11,7 @@ loadImages = ENV["RAILS_ENV"] == 'production'
 # remove all pets
 puts "Cleaning DB..."
 Geolocation.destroy_all
+Review.destroy_all
 Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
@@ -70,10 +71,29 @@ else
   perry.save
   iguana.save
 
-  booking = Booking.new(start_date: Date.parse('29/2/2020'), end_date: Date.parse('3/3/2020'))
+  booking = Booking.new(start_date: Date.parse('22/2/2020'), end_date: Date.parse('27/2/2020'))
   booking.user = svenia
   booking.pet = stinky
+  Review.create(content: "Well trained pet.", rating: 5, user: svenia, booking: booking)
   booking.save
+
+  booking2 = Booking.new(start_date: Date.parse('19/1/2020'), end_date: Date.parse('23/1/2020'))
+  booking2.user = svenia
+  booking2.pet = iguana
+  Review.create(content: "Such a special animal! Pretty cool to hold. You feel like a disney Villain.", rating: 4, user: svenia, booking: booking2)
+  booking2.save
+
+  booking3 = Booking.new(start_date: Date.parse('9/1/2020'), end_date: Date.parse('11/1/2020'))
+  booking3.user = svenia
+  booking3.pet = perry
+  Review.create(content: "Pretty cool but to much noise.", rating: 3, user: svenia, booking: booking3)
+  booking3.save
+
+  booking4 = Booking.new(start_date: Date.parse('19/2/2020'), end_date: Date.parse('21/2/2020'))
+  booking4.user = svenia
+  booking4.pet = mauwie
+  Review.create(content: "I love the cat really easy to take care of.", rating: 5, user: svenia, booking: booking4)
+  booking4.save
 
   puts "You have #{Pet.count} pets now and #{Booking.count} bookings"
   puts ""
