@@ -12,11 +12,15 @@
       <%# Display the form to create a booking %>
       <%= simple_form_for([pet, booking]) do |f| %>
       <div class="total-cost">
-        <p >4 x 15€</p>
-        <p > Total: 60 € </p>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <p id="calc"></p>
+        <p><%= @pet.price_in_eur %> Euros / day</p>
+        <p id="calc-total" data-price="<%= pet.price_in_eur %>"></p>
+        <h5 id="actual-price"></h5>
+
 
       </div>
-      <h5 class="booking-details"><strong><%= pet.price_in_eur%> €/ per day</strong></h5>
 
       <% if error %>
         <p class="alert alert-danger">Please check all the boxes!</p>
