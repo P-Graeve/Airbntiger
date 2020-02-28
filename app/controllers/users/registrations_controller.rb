@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         return
       else
         # redirect to the home page
-        redirect_to root_path
+        return
       end
     else
       # something went wrong when saving the geolocation
