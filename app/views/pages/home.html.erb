@@ -2,14 +2,14 @@
 <main class="landing-banner">
   <div class="ui-card banner-landing-card">
     <h1>Feeling sad? Rent a buddy</h1>
-      <%= form_tag("/pets", method: "get") do %>
+      <%= form_tag("/pets", method: "get", id: "search-form") do %>
       <%= label_tag(:query, "Search for:") %>
       <%= text_field_tag(:query) %>
-      <%= label_tag(:start_date, "Start-Date:") %>
+      <%= label_tag(:start_date, "Start-Date:")%>
       <%= date_field(:search, :start_date) %>
       <%= label_tag(:end_date, "End-Date:") %>
-      <%= date_field(:search, :end_date) %>
-      <%= submit_tag("Search", class: "form-actions-btn") %>
+      <%= date_field(:search, :end_date)%>
+      <%= submit_tag("Search", class: "form-actions-btn", id: "catch-date") %>
     <% end %>
   </div>
 </main>
