@@ -89,7 +89,7 @@ else
   Review.create(content: "Pretty cool but to much noise.", rating: 3, user: svenia, booking: booking3)
   booking3.save
 
-  booking4 = Booking.new(start_date: Date.parse('19/2/2020'), end_date: Date.parse('21/2/2020'))
+  booking4 = Booking.new(start_date: Date.parse('19/3/2020'), end_date: Date.parse('21/4/2020'))
   booking4.user = svenia
   booking4.pet = mauwie
   Review.create(content: "I love the cat really easy to take care of.", rating: 5, user: svenia, booking: booking4)
