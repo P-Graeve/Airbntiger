@@ -1,6 +1,24 @@
+import Calendar from 'js-year-calendar';
+
+const displayCurrentMonth = () => {
+  const monthContainers = document.querySelectorAll('.month-container');
+
+  monthContainers.forEach(container => {
+    if (container.dataset.monthId !== '0') {
+      // add none class
+      container.classList.add('none');
+    }
+  })
+}
+
 export const initCalendar = () => {
   const container = document.querySelector('#calendar');
   if (container) {
-    console.log('workin');
+    // create a new calendar
+    new Calendar(container, {
+      style: 'background'
+    });
+
+    displayCurrentMonth();
   }
 }

@@ -3833,6 +3833,11 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+js-year-calendar@^1.0.0-alpha.7:
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/js-year-calendar/-/js-year-calendar-1.0.0-alpha.7.tgz#be269ebd74c3d3481b3d693a1b67c7a16b813194"
+  integrity sha512-iW9kC+OXGgpvhgfXGXmEmNiA4E4V3ubrY1roDv0WNNjzaNsoDUGHgJzCAuYLqA8E+Q8gvE1r3LprYGP5OJQkJA==
+
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
