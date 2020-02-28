@@ -10,7 +10,7 @@ const displayCurrentMonth = () => {
     // remove any previous classes
     container.classList.remove('none');
     container.classList.remove('selected-month');
-    if (container.dataset.monthId !== '0') {
+    if (container.dataset.monthId !== '1') {
       // add none class
       container.classList.add('none');
     } else {
@@ -18,6 +18,7 @@ const displayCurrentMonth = () => {
       container.classList.add('selected-month')
     }
   });
+  refreshOccupied(selectedMonth);
 }
 
 const previousMonth = e => {

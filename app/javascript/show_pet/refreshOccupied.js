@@ -6,20 +6,22 @@ const injectOccupiedInCalendar = (periods, selectedMonth) => {
   // console.log(periods);
   tds.forEach(td => {
     // create a new date with the infos
-    const thisDate = new Date(year, month, td.innerText);
+    if (td.innerText) {
+      const thisDate = new Date(year, month, td.innerText);
 
-    periods.forEach((period, i) => {
-      if (i % 2 === 0) {
-        // these are start dates
-        const startDate = period;
-        const endDate = periods[i + 1];
-        // check if it is in between dates
-        if (startDate <= thisDate && endDate >= thisDate) {
-          // pet is occupied!
-          td.classList.add('occupied');
+      periods.forEach((period, i) => {
+        if (i % 2 === 0) {
+          // these are start dates
+          const startDate = period;
+          const endDate = periods[i + 1];
+          // check if it is in between dates
+          if (startDate <= thisDate && endDate >= thisDate) {
+            // pet is occupied!
+            td.classList.add('occupied');
+          }
         }
-      }
-    });
+      });
+    }
   });
 }
 
@@ -30,7 +32,7 @@ export const refreshOccupied = (selectedMonth) => {
     const arr = str.split('-');
     arr[0] = parseInt(arr[0]) + 2000;
     console.log(arr);
-    return new Date(arr[0], arr[1], arr[2]);
+    return new Date(arr[0], arr[1] - 1, arr[2]);
   });
   injectOccupiedInCalendar(datePeriods, selectedMonth);
 }
