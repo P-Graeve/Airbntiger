@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-loadImages = false
+loadImages = ENV["RAILS_ENV"] == 'production'
 # remove all pets
 puts "Cleaning DB..."
 Geolocation.destroy_all

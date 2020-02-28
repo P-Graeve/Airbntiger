@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
+    @past_bookings = @bookings.where('end_date < ?', Date.today)
+    @upcoming_bookings = @bookings.where('end_date > ?', Date.today)
   end
 
   def create

@@ -1,10 +1,10 @@
 .container h1 {
-  padding-top: 20px;
+  padding: 40px 0;
 }
 
 .booking-picture {
   height: 100%;
-  width: 100px;
+  width: 7vw;
   object-fit: cover;
 }
 
@@ -18,11 +18,12 @@
 
 .bookings-list {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin: 5px;
   padding: 10px;
-
 }
 
 .bookings-list > li {
@@ -33,14 +34,20 @@
 .booking-h2 {
   font-family: $headers-font;
   font-weight: lighter;
+  margin: 25px 0;
 }
 
 
 .ui-bookings-card {
   display: flex;
+  justify-content: space-between;
   background-color: white;
-  height: 120px;
-  margin: 25px 0;
-  width: 1000px;
+  height: 12vh;
+  margin: 10px 0;
+  width: 60vw;
   box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+}
+
+#h2-past-bookings {
+  margin-top: 60px;
 }

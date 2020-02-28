@@ -6,12 +6,21 @@
         <p class="no-result-message"><%="Aww. No results found"%></p>
         <% else %>
         <% @pets.each do |pet| %>
-        <li class="ui-card">
-          <%= cl_image_tag (pet.photos[0] ? pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9') %>
-          <div id="pet-card-name">
-            <%= link_to pet[:name], pet_path(pet) %>
-          </div>
-        </li>
+        <%= link_to pet_path(pet) do %>
+          <li class="ui-card search-result-card">
+            <%= cl_image_tag (pet.photos[0] ? pet.photos[0].key : 'tjscfsjpv2f4jhvkd4v9') %>
+            <div class="pet-card-details">
+              <div class="pet-card-name">
+                <%= pet.name %>
+              </div>
+              <div class="pet-card-distance">
+                <% if user_signed_in? %>
+                  <p><%= pet.distance(current_user.geolocation) %> kms away</p>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>
         <% end %>
         <% end %>
       </ul>
