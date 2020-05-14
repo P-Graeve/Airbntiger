@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-year-calendar": "^1.0.0-alpha.7",
     "popper.js": "^1.16.1"
   },
